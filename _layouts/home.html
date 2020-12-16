@@ -6,9 +6,11 @@
       <div class="column is-half">
         <div class="hero">
           <h1>Data Sonification</h1>
-          <p class='desc'>Description of the intent and introduction of this project. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class='desc'>Description of the intent and introduction of this project. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.</p>
         </div>
-        <img src="{{ site.baseurl }}/assets/img/bg.jpg" class="bg_img">
+        <!-- <img src="{{ site.baseurl }}/assets/img/bg.jpg" class="bg_img"> -->
       </div>
     </div>
   </div>
@@ -25,9 +27,9 @@
       {% for data in y %}
       <div class="flow-project">
         <div class="prject-body">
-          <a class="project-title" id="showModal">
+          <a class="project-title show-Modal">
             <figure class="image is-5by3">
-              <img class="img-responsive center-block" src="https://bulma.io/images/placeholders/480x320.png">
+              <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Title }}.png">
             </figure>
             <div>
               <h2>{{ data.Title }}</h2>
@@ -42,18 +44,16 @@
               </div>
             </div>
           </a>
-        </div>
-      </div>
-      <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">{{ data.Title }}</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            <!-- Content ... -->
-          </section>
+          <div class="modal hide">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <h1>{{ data.Title }}</h1>
+              <section>
+                <p>{{ data.Author }}</p>
+              </section>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -61,5 +61,26 @@
     </div>
   </div>
 </div>
+
+<script>
+  // $(".showModal").click(function() {
+  //   $(".modal").addClass("is-active");
+  //   $("html").addClass("is-clipped");
+  // });
+  //
+
+  $(document).ready(function() {
+    $("a.show-Modal").on("click", function() {
+      // console.log("clicked");
+      $(this).next().removeClass("hide");
+      $(this).next().addClass("is-active");
+      $("html").addClass("is-clipped");
+    });
+  });
+  $(".modal-close").click(function() {
+    $(".modal").removeClass("is-active");
+    $("html").removeClass("is-clipped");
+  });
+</script>
 
 {% include footer.html %}
