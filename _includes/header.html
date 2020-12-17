@@ -4,57 +4,55 @@
 <head>
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--====== Title ======-->
+  <!-- Title -->
   <title>Data Sonification Archive</title>
+  <!-- CSS -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
   <link href="{{ site.baseurl }}/assets/css/font.css" rel="stylesheet" />
   <link href="{{ site.baseurl }}/assets/css/bulma.min.css" rel="stylesheet" />
   <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" />
-
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src='{{ site.baseurl }}/assets/script.js'></script>
 </head>
 
 <body>
-  <div class="pageloader is-black is-bottom-to-top"></div>
-  <div class='intro'>
-    <div class="container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <!-- <div class="navbar-brand">
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div> -->
-        <div class="nav_menu">
-          <div class="navbar-nav">
-            <a href="{{ site.baseurl }}/" class="nav-item">
-              ARCHIVE
-            </a>
-            <a href="{{ site.baseurl }}/about.html" class="nav-item">
-              ABOUT
-            </a>
-            <a href="{{ site.baseurl }}/submit.html" class="nav-item">
-              SUBMIT
-            </a>
-            <a class="nav-item icon" href="" target="_blank" title="Twitter"> <i class="fab fa-twitter" aria-hidden="true"></i> </a>
-          </div>
-        </div>
-      </nav>
+  <!-- <div class="pageloader is-black" style="background-color:#161521">
+    <span class="title">Sonification</span>
+  </div> -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="nav_menu">
+      <div class="navbar-nav">
+        <a href="{{ site.baseurl }}/" class="nav-item">
+          ARCHIVE
+        </a>
+        <a href="{{ site.baseurl }}/about.html" class="nav-item">
+          ABOUT
+        </a>
+        <a href="{{ site.baseurl }}/submit.html" class="nav-item">
+          SUBMIT
+        </a>
+        <a class="nav-item icon" href="" target="_blank" title="Twitter"> <i class="fab fa-twitter" aria-hidden="true"></i> </a>
+      </div>
     </div>
-  </div>
+  </nav>
 
 </body>
 
-<!-- <script type="text/javascript">
-if ($('.pageloader').length) {
-  $('.pageloader').toggleClass('is-active');
-  $(window).on('load', function(){
-    var pageloaderTimeout = setTimeout(function(){
-      $('.pageloader').toggleClass('is-active');
-      clearTimeout(pageloaderTimeout);
-    }, 500);
-  });
-}
-</script> -->
+<script type="text/javascript">
+// if ($('.pageloader').length) {
+//   $('.pageloader').toggleClass('is-active');
+//   $(window).on('load', function(){
+//     var pageloaderTimeout = setTimeout(function(){
+//       $('.pageloader').toggleClass('is-active');
+//       clearTimeout(pageloaderTimeout);
+//     }, 500);
+//   });
+// }
+NProgress.set(0.0);
+NProgress.configure({ easing: 'easein', speed: 1000 });
+NProgress.set(1.0);
+</script>
