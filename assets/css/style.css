@@ -6,7 +6,7 @@ body {
 /*navbar-----------------------*/
 .intro {
   width: 100%;
-  height: 300px;
+  height: 20rem;
   background-color: #161521;
   position: absolute;
   /* padding: 10px 0; */
@@ -68,7 +68,7 @@ a:hover {
 .intro_text p {
   font-family: "Roboto Light";
   /* width: 35rem; */
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: white;
   opacity: 0.7;
   text-align: left;
@@ -78,7 +78,7 @@ a:hover {
 .hero {
   width: 100%;
   position: relative;
-  padding-top: 5vh;
+  padding-top: 3rem;
 }
 .bg_img {
   margin-top: -200px;
@@ -124,7 +124,7 @@ a:hover {
 }
 
 .project-list {
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 
 .project-body {
