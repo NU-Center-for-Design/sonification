@@ -44,13 +44,50 @@
               </div>
             </div>
           </a>
-          <div class="modal hide">
+          <div class="modal modal-fx-slideRight hide">
             <div class="modal-background"></div>
             <div class="modal-content">
+              <div class="modal-card-title">
                 <h1>{{ data.Title }}</h1>
-              <section>
-                <p>{{ data.Author }}</p>
-              </section>
+                <h2>
+                  {{ data.Author }}
+                  {% if data.Year != nil %}
+                  | {{ data.Year }}
+                  {% endif %}
+                </h2>
+              </div>
+              <figure class="image is-5by3"">
+                <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Title }}.png">
+              </figure>
+              <div class="columns">
+                <div class="column">
+                  <h3>Topic</h3>
+                  <p>{{ data.Topic }}</p>
+                </div>
+                <div class="column">
+                  <h3>Goal</h3>
+                  <p>{{ data.Goal }}</p>
+                </div>
+                <div class="column">
+                  <h3>User</h3>
+                  <p>{{ data.User }}</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <h3>Type of Sonification</h3>
+                  <p>{{ data.Type }}</p>
+                </div>
+                <div class="column">
+                  <h3>Media Mix</h3>
+                  <p>{{ data.Media_Mix }}</p>
+                </div>
+                <div class="column">
+                </div>
+              </div>
+              <div class="modal-content-footer">
+                <a href="{{ data.Link }}" target="_blank">link to sonificaiton</a>
+              </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
           </div>
@@ -74,11 +111,13 @@
       // console.log("clicked");
       $(this).next().removeClass("hide");
       $(this).next().addClass("is-active");
+      // $(this).next().addClass("modal-fx-slideRight");
       $("html").addClass("is-clipped");
     });
   });
   $(".modal-close").click(function() {
     $(".modal").removeClass("is-active");
+    // $(".modal").removeClass("modal-fx-slideRight");
     $("html").removeClass("is-clipped");
   });
 </script>

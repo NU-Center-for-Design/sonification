@@ -1,6 +1,6 @@
 body {
 	font-family: "Roboto Regular";
-	color: black;
+	/* color: black; */
 }
 
 /*navbar-----------------------*/
@@ -49,6 +49,7 @@ a:hover {
   padding: 0 0.5rem;
   text-align: left;
 }
+
 .intro_text h1 {
   font-family: "Roboto Bold";
   font-size: 2rem;
@@ -65,12 +66,20 @@ a:hover {
   z-index: 2;
 }
 
-.intro_text p {
+.intro_text h3 {
+  font-family: "Roboto Bold";
+  font-size: 0.75rem;
+  color: white;
+  text-align: left;
+  z-index: 2;
+}
+
+p {
   font-family: "Roboto Light";
   /* width: 35rem; */
   font-size: 0.85rem;
   color: white;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   text-align: left;
   margin-top: 20px;
   z-index: 2;
@@ -108,7 +117,7 @@ a:hover {
 
 .flow > [class*="flow"] {
 	position: relative;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	padding: 0;
 	width: 100%;
 }
@@ -129,6 +138,7 @@ a:hover {
 
 .project-body {
 	position: relative;
+	padding-bottom: 0.5rem;
 }
 
 .project-body img {
@@ -137,10 +147,60 @@ a:hover {
 	height: auto;
 }
 
+/*modal----------------------------------------*/
+
+.modal-content h1 {
+	font-size: 1.5rem;
+	line-height: 1.7rem;
+	font-weight: bold;
+	color: white;
+}
+
+.modal-content h2 {
+	font-size: 1rem;
+	color: white;
+	margin-top: 1vh;
+}
+
+.modal-content p {
+	font-size: 1rem;
+	color: white;
+	margin-top: 0.3vh;
+}
+
+.modal-content h3 {
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+}
+
+.modal-content figure {
+	margin: 1vh 0 3vh 0;
+}
+
+.modal-content-footer {
+	margin-top: 3vh;
+}
+
+.modal-content a {
+	color: white;
+	font-size: 1rem;
+	font-weight: 200;
+}
+
+.modal-content a:hover {
+	text-decoration: underline;
+}
+
+/*responsive----------------------------------------*/
+
 @media screen and (min-width: 375px) and (max-width: 400px) {
   .container {
-    max-width: 300px
+    max-width: 350px
   }
+	.modal-content {
+		max-width: 350px
+	}
 }
 
 @media screen and (min-width: 700px) {
