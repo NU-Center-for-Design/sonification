@@ -5,10 +5,10 @@
     <div class='intro_text flow'>
       <div class="flow-three-one">
         <div class="hero">
-          <h1>Data Sonification</h1>
-          <p class='desc'>Description of the intent and introduction of this project. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.</p>
+          <h1>Data Sonification Archive</h1>
+          <p class='desc'>
+            This curated collection is part of a broader research endeavor in which data, sonification and design converge to explore the potential of sound in complementing other modes of representation and broadening the publics of data. With visualization still being one of the prominent forms of data transformation, we believe that sound can both enrich the experience of data and build new publics.
+          </p>
         </div>
         <!-- <img src="{{ site.baseurl }}/assets/img/bg.jpg" class="bg_img"> -->
       </div>
@@ -29,7 +29,11 @@
         <div class="prject-body">
           <a class="project-title show-Modal">
             <figure class="image is-5by3">
-              <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Title }}.png">
+              {% if data.Picture != nil %}
+                <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
+              {% else %}
+                <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Title }}.png">
+              {% endif %}
             </figure>
             <div>
               <h2>{{ data.Title }}</h2>
@@ -57,7 +61,11 @@
                 </h2>
               </div>
               <figure class="image is-5by3"">
-                <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Title }}.png">
+                {% if data.Picture != nil %}
+                  <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
+                {% else %}
+                  <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Title }}.png">
+                {% endif %}
               </figure>
               <div class="columns">
                 <div class="column">
@@ -86,7 +94,7 @@
                 </div>
               </div>
               <div class="modal-content-footer">
-                <a href="{{ data.Link }}" target="_blank">link to sonificaiton</a>
+                <a href="{{ data.Link }}" target="_blank">link to sonification</a>
               </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
