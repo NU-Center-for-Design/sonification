@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<div class="intro">
+  <div class="container">
+    <div class='intro_text flow'>
+      <div class="flow-half">
+        <div class="hero">
+          <h1>Submit a Data Sonification Case!</h1>
+          <p class='desc_about'>
+            Please follow the instructions below for optimal formatting. Your submission will be processed more rapidly if you do. Thank you very much for your contribution!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="publications">
+  <div class="container">
+    <div class="intro_text flow">
+      <form id="submitform" method="POST" class="flow-half" name="submit-to-google-sheet">
+        <!-- title -->
+        <div class="field">
+          <label class="label">Case Title</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Input your case title" name="title">
+          </div>
+        </div>
+        <!-- time -->
+        <div class="field">
+          <label class="label">Year of Creation</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Input when did the case created" name="time">
+          </div>
+        </div>
+        <!-- source -->
+        <div class="field">
+          <label class="label">Source Link</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Input when did the case created" name="source">
+          </div>
+        </div>
+        <!-- description -->
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Textarea" name="description"></textarea>
+          </div>
+        </div>
+        <!-- email -->
+        <div class="field">
+          <label class="label">Sent by</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Email input" name="email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <!-- <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span> -->
+          </div>
+          <!-- <p class="help is-danger">This email is invalid</p> -->
+        </div>
+        <!-- button -->
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button" type="submit" name="submitButton">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- message -->
+      <article class="message is-success is-invisible" id="sucessMessage">
+        <div class="message-body">
+          Thank you, we have received your case. We are about to progress it as soon as possible.
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
