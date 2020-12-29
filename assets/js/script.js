@@ -11,7 +11,14 @@ document.addEventListener('DOMContentLoaded', function(e) {
                 min: 6,
                 max: 30,
                 message: 'The title must be more than 6 and less than 30 characters long'
-              },
+              }
+            }
+          },
+          author: {
+            validators: {
+              notEmpty: {
+                message: 'The author name is required'
+              }
             }
           },
           time: {

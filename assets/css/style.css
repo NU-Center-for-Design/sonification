@@ -288,8 +288,15 @@ p {
 /*responsive----------------------------------------*/
 
 @media screen and (min-width: 375px) and (max-width: 400px) {
+	figcaption {
+		font-size: 1rem;
+		margin-top: 0px;
+		width: 200px;
+	}
+
   .container {
     max-width: 350px;
+		margin: 0 20px;
   }
 	.modal-content {
 		max-width: 350px;
@@ -300,6 +307,11 @@ p {
 }
 
 @media screen and (min-width: 700px) {
+	figcaption {
+		font-size: 1rem;
+		margin-top: 50px;
+		width: 200px;
+	}
 
 	.flow > [class*="flow"] {
 		padding: 0.5rem 0.5rem;
@@ -360,15 +372,15 @@ p {
 	/* padding-top: 20px; */
 }
 .flex-container {
-	display: flex;
+	display: flex
 }
 .logo {
-	margin:0 40px 0 0;
+	height: 150px;
+	width: auto;
 }
-figcaption {
-	margin-top: 20px;
-	margin-right: 30px;
-	width: 200px;
+.logo-responsive{
+	max-width: 100%;
+	max-height: 100%;
 }
 
 /* image--------------------------------------------*/
