@@ -230,7 +230,7 @@ p {
 	float: left;
   margin-top: 40px;
 	width: 100%;
-	padding: 0 0.5rem 0 0.5rem;
+	/* padding: 0 0.5rem 0 0.5rem; */
 	/* height: 150rem; */
 	color: black;
 }
@@ -259,7 +259,7 @@ p {
   /* z-index: 2; */
 }
 .desc_publication {
-	margin-left: 2rem;
+	margin-left: 0rem;
 	font-family: "Roboto Light";
   font-size: 0.85rem;
   text-align: left;
@@ -302,7 +302,11 @@ p {
 		max-width: 350px;
 	}
 	.flex-container{
+		padding: 1rem 0.5rem;
 		flex-direction: column;
+	}
+	.logo{
+		margin: 1rem 0rem;
 	}
 }
 
@@ -314,7 +318,7 @@ p {
 	}
 
 	.flow > [class*="flow"] {
-		padding: 0.5rem 0.5rem;
+		padding: 0.5rem 1rem 0.5rem 0rem;
 	}
   .flow > .flow-project {
     width: 33.33%;
@@ -359,11 +363,11 @@ p {
 .footer {
   width: 100%;
 	height: 50px;
-	margin-top: -50px;
+	/* margin-top: 50px; */
   background-color: white;
 	position: relative;
 	bottom: 0;
-	padding: 1rem 0.5rem;
+	padding: 1rem 0rem;
 	z-index: -1;
 }
 .footer p {
@@ -372,11 +376,13 @@ p {
 	/* padding-top: 20px; */
 }
 .flex-container {
+	/* padding: 0 0.5rem; */
 	display: flex
 }
 .logo {
-	height: 150px;
+	height: 70px;
 	width: auto;
+	padding-right: 70px;
 }
 .logo-responsive{
 	max-width: 100%;
