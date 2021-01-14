@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
       var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
       var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       var dateTime = date+' '+time;
-      
+
       const form = document.forms['submit-to-google-sheet']
       const message = document.getElementById("sucessMessage")
 
       document.getElementById('SubmitTime').value = dateTime;
-      console.log(dateTime);
+      // console.log(dateTime);
 
       e.preventDefault()
       fetch('https://script.google.com/macros/s/AKfycbyzpPCI0oOoWzR4SkPyN1AZikzvrMCMUekYZ1CKOTp1ZCyrxUc/exec', {
