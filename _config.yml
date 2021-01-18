@@ -35,7 +35,7 @@ plugins:
   - jekyll-feed
 
 # Google Analytics
-google_analytics: G-N99NDDG1YS
+google_analytics: UA-187594444-1
 
 # Exclude from processing.
 # The following items will not be processed, by default.
