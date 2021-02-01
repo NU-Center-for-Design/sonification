@@ -19,15 +19,48 @@
 
 <div class='projects'>
   <div class="container">
-    <div class="filters"></div>
+    <div class="filters">
+      <div class="select is-small">
+        <select class="filters-select topic">
+          <option value="all">topics</option>
+          {% assign topics = site.data.data | map: "Topic" | uniq %}
+          {% for item in topics %}
+          <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <!-- <div class="select is-small">
+        <select class="filters-select goal">
+          <option value="all">all goals</option>
+          {% assign goals = site.data.data | map: "Goal" | uniq %}
+          {% for item in goals %}
+          <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+        </select>
+      </div> -->
+      <div class="select is-small">
+        <select class="filters-select type">
+          <option value="all">types</option>
+          {% assign types = site.data.data | map: "Type" | uniq %}
+          {% for item in types %}
+          <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <!-- <div id="myBtnContainer">
+        <button class="button is-small is-primary is-rounded" name="button" onclick="filterSelection('all')">show all</button>
+        <button class="button is-small is-rounded" name="button" onclick="filterSelection('Environment')">Environment</button>
+      </div>
+    </div> -->
     <div class="images flow project-list">
       {% assign years = site.data.data | group_by: "Year" %}
       <!-- {% assign yearsSorted = years | sort: "name" %} -->
       {% for yearsorted in years %}
       {% assign y = yearsorted.items | sort: "Author" %}
       {% for data in y %}
-      <div class="flow-project">
-        <div class="prject-body">
+      <div class="flow-project {{ data.Topic }} {{ data.Goal }} {{ data.Type }}">
+        <div class="project-body">
           <a class="project-title show-Modal">
             <figure class="image is-5by3">
               {% if data.Picture != nil %}
@@ -130,6 +163,74 @@
     // $(".modal").removeClass("modal-fx-slideRight");
     $("html").removeClass("is-clipped");
   });
+  // filter
+  $(".filters-select").change(function() {
+    var filterValue = $(this).val();
+    var row = $('.flow-project');
+    console.log(filterValue);
+
+    row.each(function(i, el) {
+      if (el.className.indexOf(filterValue) > -1) {
+        $(el).show();
+      } else {
+        $(el).hide();
+      }
+    })
+
+    if ("all" == filterValue) {
+      row.show();
+    }
+
+    $(".filters-select").not(this).val($("option:first").val());
+  });
+  // $(el).is("[name~=' "filterValue" ']")
+  // el.currentTarget.name.indexOf("filterValue") > -1
+
+  // $(this).is( "[name~='someWord']" )
+
+  // filterSelection("all")
+  // function filterSelection(c){
+  //   var x, i;
+  //   x = document.getElementsByClassName("flow-project");
+  //   if (c == "all") c = "";
+  //   for (i = 0; i < x.length; i++) {
+  //     RemoveClass(x[i], "show");
+  //     if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+  //   }
+  // }
+  //
+  // function AddClass(ele, name) {
+  //   var i, arr1, arr2;
+  //   arr1 = ele.className.split(" ");
+  //   arr2 = name.split(" ");
+  //   for (i = 0; i < arr2.length; i++) {
+  //     if (arr1.indexOf(arr2[i]) == -1) {
+  //       ele.className += " " + arr2[i];
+  //     }
+  //   }
+  // }
+  //
+  // function RemoveClass(ele, name) {
+  //   var i, arr1, arr2;
+  //   arr1 = ele.className.split(" ");
+  //   arr2 = name.split(" ");
+  //   for (i = 0; i < arr2.length; i++){
+  //     while (arr1.indexOf(arr2[i]) > -1) {
+  //       arr1.splice(arr1.indexOf(arr2[i]), 1);
+  //     }
+  //   }
+  //   ele.className = arr1.join(" ")
+  // }
+  //
+  // var btnContainer = document.getElementById("myBtnContainer");
+  // var btns = btnContainer.getElementsByClassName("button");
+  // for (var i=0; i<btns.length; i++) {
+  //   btns[i].addEventListener('change', function(){
+  //     var current = document.getElementsByClassName("is-primary");
+  //     current[0].className = current[0].className.replace(" is-primary","");
+  //     this.className += " is-primary";
+  //   });
+  // }
 </script>
 
 {% include footer.html %}

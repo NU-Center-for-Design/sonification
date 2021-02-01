@@ -127,6 +127,18 @@ p {
   margin-top: 10px;
 }
 
+/* filters---------------------*/
+
+.filters {
+	padding: 1rem 0.5rem;
+}
+
+.filters .select {
+	padding-right: 0.5rem;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+}
+
 /* project---------------------*/
 
 .flow {
@@ -148,6 +160,10 @@ p {
 
 /*project layout-----------------------------------------*/
 
+.flow-project {
+	/* display: none; */
+}
+
 .projects {
 	position: relative;
   margin-top: 20px;
@@ -166,6 +182,10 @@ p {
 	display: block;
 	max-width: 100%;
 	height: auto;
+}
+
+.show {
+	/* display: block; */
 }
 
 /*modal----------------------------------------*/
@@ -307,6 +327,11 @@ p {
 	}
 	.logo{
 		margin: 1rem 0rem;
+	}
+	.filters .select {
+		margin-bottom: 0.5rem;
+		/* display: flex; */
+		/* flex-wrap: wrap; */
 	}
 }
 
