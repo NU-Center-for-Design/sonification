@@ -22,7 +22,7 @@
     <div class="filters">
       <div class="select is-small">
         <select class="filters-select topic">
-          <option value="all">topics</option>
+          <option value="all">all topics</option>
           {% assign topics = site.data.data | map: "Topic" | uniq %}
           {% for item in topics %}
           <option value="{{ item }}">{{ item }}</option>
@@ -31,7 +31,7 @@
       </div>
       <!-- <div class="select is-small">
         <select class="filters-select goal">
-          <option value="all">all goals</option>
+          <option value="all">goals</option>
           {% assign goals = site.data.data | map: "Goal" | uniq %}
           {% for item in goals %}
           <option value="{{ item }}">{{ item }}</option>
@@ -40,7 +40,7 @@
       </div> -->
       <div class="select is-small">
         <select class="filters-select type">
-          <option value="all">types</option>
+          <option value="all">all types</option>
           {% assign types = site.data.data | map: "Type" | uniq %}
           {% for item in types %}
           <option value="{{ item }}">{{ item }}</option>
