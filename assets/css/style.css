@@ -63,6 +63,7 @@ html, body {
   width: 100%;
   /* height: 500px; */
   padding: 0 0.5rem;
+	padding-bottom: 2rem;
   text-align: left;
 }
 
@@ -127,16 +128,31 @@ p {
   margin-top: 10px;
 }
 
+.attrs {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.attr {
+	margin-right: 2rem;
+	padding-bottom: 1rem;
+}
+
 /* filters---------------------*/
 
 .filters {
-	padding: 0.5rem;
+	padding-left: 0.5rem;
+	padding-right: 1.5rem;
+	padding-top: 0.5rem;
+	/* display: flex; */
 }
 
 .filters .select {
 	padding-right: 0.5rem;
-	/* display: flex; */
-	/* flex-wrap: wrap; */
+}
+
+.search {
+	float:right;
 }
 
 /* project---------------------*/
@@ -149,7 +165,7 @@ p {
 
 .flow > [class*="flow"] {
 	position: relative;
-	margin-bottom: 2em;
+	/* margin-bottom: 2em; */
 	padding: 0;
 	width: 100%;
 }
@@ -175,7 +191,7 @@ p {
 
 .project-body {
 	position: relative;
-	padding-bottom: 0.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .project-body img {
@@ -191,7 +207,7 @@ p {
 /*modal----------------------------------------*/
 
 .modal-content h1 {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	line-height: 1.7rem;
 	font-weight: bold;
 	color: white;
@@ -216,7 +232,7 @@ p {
 }
 
 .modal-content figure {
-	margin: 1vh 0 3vh 0;
+	margin: 2vh 0 3vh 0;
 }
 
 .modal-content-footer {
@@ -318,21 +334,35 @@ p {
     max-width: 350px;
 		margin: 0 20px;
   }
+
 	.modal-content {
 		max-width: 350px;
 	}
+
 	.flex-container{
 		padding: 1rem 0.5rem;
 		flex-direction: column;
 	}
+
 	.logo{
 		margin: 1rem 0rem;
 	}
+
+	.filters {
+		flex-direction: column;
+	}
+
 	.filters .select {
 		margin-bottom: 0.5rem;
 		/* display: flex; */
 		/* flex-wrap: wrap; */
 	}
+
+	.search {
+		margin-left: 0;
+		float: none;
+	}
+
 }
 
 @media screen and (min-width: 700px) {
