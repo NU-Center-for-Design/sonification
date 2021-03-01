@@ -194,10 +194,6 @@ p {
 
 /*project layout-----------------------------------------*/
 
-.flow-project {
-	/* display: none; */
-}
-
 .projects {
 	position: relative;
 	margin-top: 20px;
@@ -216,10 +212,6 @@ p {
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-
-.show {
-	/* display: block; */
 }
 
 /*modal----------------------------------------*/
