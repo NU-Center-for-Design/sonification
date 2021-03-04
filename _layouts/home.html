@@ -137,6 +137,11 @@
               <div class="modal-content-footer">
                 <i style="color:white" class="far fa-hand-point-right"></i>
                 <a href="{{ data.Link }}" target="_blank">link to sonification</a>
+                <br>
+                {% if data.Sonification_Art_Blog != nil %}
+                <i style="color:white" class="far fa-hand-point-right"></i>
+                <a href="{{ data.Link_to_Sonification_Art_Blog }}" target="_blank">link to Sonification Art Blog</a>
+                {% endif %}
               </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
