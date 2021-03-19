@@ -173,11 +173,18 @@
       $("html").addClass("is-clipped");
     });
   });
+
   $(".modal-close").click(function () {
     $(".modal").removeClass("is-active");
     // $(".modal").removeClass("modal-fx-slideRight");
     $("html").removeClass("is-clipped");
   });
+
+  $(".modal-background").click(function () {
+    $(".modal").removeClass("is-active");
+    // $(".modal").removeClass("modal-fx-slideRight");
+    $("html").removeClass("is-clipped");
+  })
 
   // filter function
   $("#applyFilter").click(function () {
