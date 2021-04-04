@@ -120,6 +120,12 @@ p {
 	/* z-index: 2; */
 }
 
+li {
+	font-family: "Roboto Light";
+	/* width: 35rem; */
+	font-size: 0.85rem;
+}
+
 .hero {
 	width: 100%;
 	position: relative;
@@ -290,6 +296,17 @@ p {
 
 .publications h2 {
 	font-family: "Roboto Bold";
+	font-weight: bold;
+	/* margin-top: 50px; */
+	font-size: 1rem;
+	color: black;
+	text-align: left;
+	/* z-index: 2; */
+}
+
+.publications h3 {
+	font-family: "Roboto";
+	font-weight: normal;
 	/* margin-top: 50px; */
 	font-size: 1rem;
 	color: black;
@@ -298,7 +315,7 @@ p {
 }
 
 .publications p {
-	font-family: "Roboto Light";
+	font-family: "Roboto";
 	font-size: 0.85rem;
 	color: black;
 	text-align: left;
