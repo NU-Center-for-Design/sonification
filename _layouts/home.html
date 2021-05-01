@@ -27,7 +27,7 @@
       <div class="select is-small">
         <select class="filters-select" id="topic">
           <option value="">all topics</option>
-          {% assign topics = site.data.data | map: "Topic" | uniq %}
+          {% assign topics = site.data.data | map: "Topic" | uniq | sort %}
           {% for item in topics %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
