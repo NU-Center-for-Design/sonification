@@ -9,7 +9,8 @@ layout: default
         <div class="hero">
           <h1>MetaData</h1>
           <p class='desc_about'>
-            Up to April 9th, we compile metadata from all sonification projects stored in this archive. <br>The Sankey Diagrams below show overall relationships among projects, topics and goals.
+            Up to April 9th, we compile metadata from all sonification projects stored in this archive. <br>The Sankey
+            Diagrams below show overall relationships among projects, topics and goals.
           </p>
         </div>
       </div>
@@ -30,7 +31,20 @@ layout: default
           </object> -->
         </div>
       </div>
-      <p><a target="_blank" href="{{ site.baseurl }}/assets/metadata/metadata_0409.csv"><i class="fas fa-cloud-download-alt"></i> Download metadata </a></p>
+      <div>
+        <p><a target="_blank" href="{{ site.baseurl }}/assets/metadata/metadata_0409.csv"><i
+              class="fas fa-cloud-download-alt"></i> Download metadata </a></p>
+        <p><a target="_blank" href="#" class="figurelink"><i class="fas fa-cloud-download-alt"></i> Download figures
+          </a></p>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  $('a.figurelink').click(function (e) {
+    e.preventDefault();
+    window.open('{{ site.baseurl }}/assets/metadata/sankey-04.svg');
+    window.open('{{ site.baseurl }}/assets/metadata/sankey-05.svg');
+  });
+</script>
