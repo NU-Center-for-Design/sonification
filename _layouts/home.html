@@ -27,7 +27,7 @@
       <div class="select is-small">
         <select class="filters-select" id="topic">
           <option value="">all topics</option>
-          {% assign topics = site.data.data | map: "Topic" | uniq | sort %}
+          {% assign topics = site.data.data | map: "Topic_new" | uniq | sort %}
           {% for item in topics %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
@@ -70,7 +70,7 @@
       {% for yearsorted in years %}
       {% assign y = yearsorted.items | sort: "Author" %}
       {% for data in y %}
-      <div class="flow-project {{ data.Title }} {{ data.Author }} {{ data.Topic }} {{ data.Goal }} {{ data.Type }}">
+      <div class="flow-project {{ data.Title }} {{ data.Author }} {{ data.Topic_new }} {{ data.Goal_new }} {{ data.Type }}">
         <div class="project-body">
           <a class="project-title show-Modal">
             <figure class="image is-5by3">
@@ -113,11 +113,11 @@
               <div class="attrs">
                 <div class="attr">
                   <h3>Topic</h3>
-                  <p>{{ data.Topic }}</p>
+                  <p>{{ data.Topic_new }}</p>
                 </div>
                 <div class="attr">
                   <h3>Goal</h3>
-                  <p>{{ data.Goal }}</p>
+                  <p>{{ data.Goal_new }}</p>
                 </div>
                 <div class="attr">
                   <h3>User</h3>
