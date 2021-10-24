@@ -34,10 +34,10 @@
         </select>
       </div>
       <div class="select is-small">
-        <select class="filters-select" id="type">
-          <option value="">all types</option>
-          {% assign types = site.data.data | map: "Type" | uniq %}
-          {% for item in types %}
+        <select class="filters-select" id="goal">
+          <option value="">all goals</option>
+          {% assign goals = site.data.data | map: "Goal_new" | uniq %}
+          {% for item in goals %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
         </select>
@@ -190,7 +190,7 @@
   $("#applyFilter").click(function () {
     var filterValue = [];
     filterValue.push($('#topic').val());
-    filterValue.push($('#type').val());
+    filterValue.push($('#goal').val());
     console.log(filterValue);
 
     var row = $('.flow-project');
