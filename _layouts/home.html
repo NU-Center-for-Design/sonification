@@ -70,7 +70,7 @@
       {% for yearsorted in years %}
       {% assign y = yearsorted.items | sort: "Author" %}
       {% for data in y %}
-      <div class="flow-project {{ data.Title }} {{ data.Author }} {{ data.Topic_new }} {{ data.Goal_new }} {{ data.Type }}">
+      <div class="flow-project {{ data.Topic_new }} {{ data.Goal_new }}">
         <div class="project-body">
           <a class="project-title show-Modal">
             <figure class="image is-5by3">
