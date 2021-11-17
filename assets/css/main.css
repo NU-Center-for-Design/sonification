@@ -85,6 +85,11 @@ body {
 	padding-bottom: 50px;
 }
 
+.headline > div {
+	padding-right: 10px;
+	display:inline-block;
+}
+
 .intro_text h1 {
 	font-family: "Roboto Bold";
 	font-size: 2rem;
@@ -168,6 +173,10 @@ li {
 	padding-right: 1.5rem;
 	padding-top: 0.5rem;
 	/* display: flex; */
+}
+
+.tags {
+	margin-top: 1rem;
 }
 
 .filters .select {
