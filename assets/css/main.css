@@ -332,7 +332,7 @@ li {
 }
 
 .publications h3 {
-	font-family: "Roboto";
+	font-family: "Roboto regular";
 	font-weight: normal;
 	/* margin-top: 50px; */
 	font-size: 1rem;
@@ -342,7 +342,7 @@ li {
 }
 
 .publications p {
-	font-family: "Roboto";
+	font-family: "Roboto regular";
 	font-size: 0.85rem;
 	color: black;
 	text-align: left;
