@@ -38,39 +38,56 @@ body {
 	background-color: #161521;
 }
 
-.navbar-nav {
-	float: right;
-	text-align: right;
+.navbar-end {
 	color: #ffffff;
-	margin-right: 40px;
+	margin-right: 8px;
 }
 
-.nav-item {
-	margin: 0 0 0 28px;
+.navbar-item {
+	text-align: right;
+	margin: 0 0 0 15px;
 	font-family: "Roboto Regular";
 	font-size: 12px;
 	line-height: 1.28;
 	letter-spacing: normal;
-	text-align: left;
+	/* text-align: left; */
 	color: #ffffff;
+	background-color: transparent;
 }
 
 /* nav_link */
-.navbar-nav a:link {
+.navbar-end a:link {
 	color: white;
 }
 
-.navbar-nav a:visited {
+.navbar-end a:visited {
 	color: white;
 }
 
-.navbar-nav a:hover {
+.navbar-end a:hover {
 	color: #2ad4c2;
 }
 
-.navbar-nav a:active {
+.navbar-end a:active {
 	color: #2ad4c2;
 	font-style: Bold;
+}
+
+.navbar-burger {
+	color: #ffffff;
+}
+
+.navbar-burger:hover {
+	color: #2ad4c2;
+}
+
+a.navbar-item:hover {
+	background-color: transparent;
+}
+
+.navbar-menu {
+	background-color: transparent;
+	float: right;
 }
 
 .intro_text {

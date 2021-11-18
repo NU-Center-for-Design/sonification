@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang='en' prefix='og: http://ogp.me/ns#'>
+
 <head>
-  <meta charset='utf-8'>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- MetaData -->
-  <meta name="image" property="og:image" content="{{ site.baseurl }}/assets/metadata/sonification.jpg"/>
-  <meta property='og:title'content='Data Sonification Archive'/>
-  <meta name="author" content="Sara Lenzi, Paolo Ciuccarelli, Houjiang Liu, Yuan Hua"/>
+  <meta name="image" property="og:image" content="{{ site.baseurl }}/assets/metadata/sonification.jpg" />
+  <meta property='og:title' content='Data Sonification Archive' />
+  <meta name="author" content="Sara Lenzi, Paolo Ciuccarelli, Houjiang Liu, Yuan Hua" />
   <meta property="og:url" content="https://sonification.design/" />
-  <meta itemprop="thumbnailUrl" content="{{ site.baseurl }}/assets/metadata/sonification.jpg"/>
-  <meta name="twitter:image" content="{{ site.baseurl }}/assets/metadata/sonification.jpg"/>
-  <link rel="image_src" href="{{ site.baseurl }}/assets/metadata/sonification.jpg"/>
+  <meta itemprop="thumbnailUrl" content="{{ site.baseurl }}/assets/metadata/sonification.jpg" />
+  <meta name="twitter:image" content="{{ site.baseurl }}/assets/metadata/sonification.jpg" />
+  <link rel="image_src" href="{{ site.baseurl }}/assets/metadata/sonification.jpg" />
   <meta name="citation_title" content="Data Sonification Archive" />
   <meta name="citation_author" content="Lenzi, Sara" />
   <meta name="citation_author" content="Ciuccarelli, Paolo" />
@@ -24,9 +25,10 @@
   <title>Data Sonification Archive</title>
   <!-- CSS -->
   <link
-  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-  rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
   <link href="{{ site.baseurl }}/assets/css/font.css" rel="stylesheet" />
   <link href="{{ site.baseurl }}/assets/css/bulma.min.css" rel="stylesheet" />
@@ -38,7 +40,9 @@
   <!-- Script -->
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
   <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
   <script src="{{ site.baseurl }}/assets/js/FormValidation.min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/Bulma.min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/script.js"></script>
@@ -52,29 +56,38 @@
     <span class="title">Sonification</span>
   </div> -->
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8M7W86" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8M7W86" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="intro">
     <div class="container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="nav_menu">
-          <div class="navbar-nav">
-            <a href="{{ site.baseurl }}/" class="nav-item">
+      <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <a href="{{ site.baseurl }}/" class="navbar-item">
               ARCHIVE
             </a>
-            <a href="{{ site.baseurl }}/resource.html" class="nav-item">
+            <a href="{{ site.baseurl }}/resource.html" class="navbar-item">
               RESOURCES
             </a>
-            <a href="{{ site.baseurl }}/metadata.html" class="nav-item">
+            <a href="{{ site.baseurl }}/metadata.html" class="navbar-item">
               METADATA
             </a>
-            <a href="{{ site.baseurl }}/about.html" class="nav-item">
+            <a href="{{ site.baseurl }}/about.html" class="navbar-item">
               ABOUT
             </a>
-            <a href="{{ site.baseurl }}/submit.html" class="nav-item">
+            <a href="{{ site.baseurl }}/submit.html" class="navbar-item">
               SUBMIT
             </a>
-            <a class="nav-item icon" href="https://twitter.com/datasonif" target="_blank" title="Twitter"> <i class="fab fa-twitter" aria-hidden="true"></i> </a>
+            <a class="navbar-item" href="https://twitter.com/datasonif" target="_blank" title="Twitter"> <i
+                class="fab fa-twitter" aria-hidden="true"></i> </a>
           </div>
         </div>
       </nav>
@@ -93,6 +106,18 @@
   //     }, 500);
   //   });
   // }
+  $(document).ready(function () {
+
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function () {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+    });
+  });
+
   NProgress.set(0.0);
   NProgress.configure({
     easing: 'easein',

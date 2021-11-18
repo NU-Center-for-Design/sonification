@@ -51,7 +51,7 @@
           {% endfor %}
         </select>
       </div>
-      <button class="button is-small is-light is-info" id="applyFilter">Apply</button>
+      <!-- <button class="button is-small is-light is-info" id="applyFilter">Apply</button> -->
 
       <div class="search">
         <div class="control has-icons-right">
@@ -204,7 +204,7 @@
   })
 
   // filter function
-  $("#applyFilter").click(function () {
+  $(".filters-select").change(function () {
     var filterValue = [];
     filterValue.push($('#topic').val());
     filterValue.push($('#goal').val());
