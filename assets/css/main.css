@@ -82,10 +82,6 @@ body {
 	color: #ffffff;
 }
 
-.navbar-burger:hover {
-	color: #2ad4c2;
-}
-
 a.navbar-item:hover {
 	background-color: transparent;
 }
