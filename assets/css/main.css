@@ -192,7 +192,7 @@ li {
 
 .filters {
 	padding-left: 0.5rem;
-	padding-right: 1.5rem;
+	padding-right: 0.5rem;
 	padding-top: 0.5rem;
 	/* display: flex; */
 }
@@ -241,7 +241,7 @@ li {
 }
 
 .project-list {
-	padding: 1rem 0.5rem;
+	padding: 1rem 0rem 1rem 0.5rem;
 }
 
 .project-body {
@@ -451,7 +451,7 @@ li {
 	}
 
 	.flow>[class*="flow"] {
-		padding: 0.5rem 1rem 0.5rem 0rem;
+		padding: 0.5rem 0.7rem 0.5rem 0rem;
 	}
 
 	.flow>.flow-project {
