@@ -23,6 +23,23 @@ body {
 	width: 40%;
 }
 
+/*back-to-top-----------------*/
+#backTotop {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	transition: background-color .3s,
+		opacity .3s, visibility .3s;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1000;
+}
+
+#backTotop.show {
+	opacity: 1;
+	visibility: visible;
+}
+
 /*navbar-----------------------*/
 .intro {
 	width: 100%;
@@ -103,9 +120,9 @@ a.navbar-item:hover {
 	padding-bottom: 50px;
 }
 
-.headline > div {
+.headline>div {
 	padding-right: 10px;
-	display:inline-block;
+	display: inline-block;
 }
 
 .intro_text h1 {
