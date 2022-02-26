@@ -174,6 +174,8 @@
     $('#counter').text(counts);
   })
 
+  let old_url = window.location.pathname;
+
   $(document).ready(function () {
     $("a.show-Modal").on("click", function () {
       // console.log("clicked");
@@ -181,6 +183,10 @@
       $(this).next().addClass("is-active");
       // $(this).next().addClass("modal-fx-slideRight");
       $("html").addClass("is-clipped");
+
+      let new_url = old_url + "#/#" + $(this).next().attr("id")
+      window.history.pushState({}, 0, new_url)
+
     });
   });
 
@@ -188,12 +194,18 @@
     $(".modal").removeClass("is-active");
     // $(".modal").removeClass("modal-fx-slideRight");
     $("html").removeClass("is-clipped");
+
+    let new_url = old_url
+    window.history.pushState({}, 0, new_url)
   });
 
   $(".modal-background").click(function () {
     $(".modal").removeClass("is-active");
     // $(".modal").removeClass("modal-fx-slideRight");
     $("html").removeClass("is-clipped");
+
+    let new_url = old_url
+    window.history.pushState({}, 0, new_url)
   })
 
   // filter function
@@ -310,13 +322,13 @@
   $(document).ready(function () {
     var href = $(location).attr('href');
     var array = href.split('/');
-    var lastsegment = array[array.length-1];
-    
-    if(window.location.href.indexOf(lastsegment) != -1) {
+    var lastsegment = array[array.length - 1];
+
+    if (window.location.href.indexOf(lastsegment) != -1) {
       $(lastsegment).removeClass("hide");
       $(lastsegment).addClass("is-active");
       $("html").addClass("is-clipped");
-  }
+    }
 
 
   });
