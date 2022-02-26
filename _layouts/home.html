@@ -100,7 +100,7 @@
               </h3>
             </div>
           </a>
-          <div class="modal modal-fx-slideRight hide">
+          <div class="modal modal-fx-slideRight hide" id="{{ data.URL }}">
             <div class="modal-background"></div>
             <div class="modal-content">
               <div class="modal-card-title">
@@ -304,6 +304,21 @@
     $('html, body').animate({
       scrollTop: 0
     }, '300');
+  });
+
+  // open modal with individual url
+  $(document).ready(function () {
+    var href = $(location).attr('href');
+    var array = href.split('/');
+    var lastsegment = array[array.length-1];
+    
+    if(window.location.href.indexOf(lastsegment) != -1) {
+      $(lastsegment).removeClass("hide");
+      $(lastsegment).addClass("is-active");
+      $("html").addClass("is-clipped");
+  }
+
+
   });
 </script>
 
