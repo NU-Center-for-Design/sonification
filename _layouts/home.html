@@ -184,7 +184,7 @@
       // $(this).next().addClass("modal-fx-slideRight");
       $("html").addClass("is-clipped");
 
-      let new_url = old_url + "#/#" + $(this).next().attr("id")
+      let new_url = old_url + "#" + $(this).next().attr("id")
       window.history.pushState({}, 0, new_url)
 
     });
