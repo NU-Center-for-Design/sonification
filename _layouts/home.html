@@ -27,7 +27,7 @@
       <div class="select is-small">
         <select class="filters-select" id="topic">
           <option value="">all topics</option>
-          {% assign topics = site.data.data | map: "Topic" | uniq | sort %}
+          {% assign topics = site.data.data-copy | map: "Topic" | uniq | sort %}
           {% for item in topics %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
@@ -36,7 +36,7 @@
       <div class="select is-small">
         <select class="filters-select" id="goal">
           <option value="">all goals</option>
-          {% assign goals = site.data.data | map: "Goal_Primary" | uniq %}
+          {% assign goals = site.data.data-copy | map: "Goal_Primary" | uniq %}
           {% for item in goals %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
@@ -45,7 +45,7 @@
       <div class="select is-small">
         <select class="filters-select" id="year">
           <option value="">all years</option>
-          {% assign years = site.data.data | map: "Year" | uniq %}
+          {% assign years = site.data.data-copy | map: "Year" | uniq %}
           {% for item in years %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
@@ -75,7 +75,7 @@
     <a href=""><button class="button is-rounded is-info" id="backTotop"><i class="fas fa-arrow-up"></i></button></a>
 
     <div class="images flow project-list">
-      {% assign years = site.data.data | group_by: "Year" %}
+      {% assign years = site.data.data-copy | group_by: "Year" %}
       <!-- {% assign yearsSorted = years | sort: "name" %} -->
       {% for yearsorted in years %}
       {% assign y = yearsorted.items | sort: "Author" %}
