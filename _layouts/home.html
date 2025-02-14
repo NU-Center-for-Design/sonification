@@ -51,6 +51,15 @@
           {% endfor %}
         </select>
       </div>
+      <div class="select is-small">
+        <select class="filters-select" id="method">
+          <option value="">all methods</option>
+          {% assign methods = site.data.data-copy | map: "Method" | uniq %}
+          {% for item in methods %}
+          <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+        </select>
+      </div>
       <!-- <button class="button is-small is-light is-info" id="applyFilter">Apply</button> -->
 
       <div class="search">
@@ -80,7 +89,7 @@
       {% for yearsorted in years %}
       {% assign y = yearsorted.items | sort: "Author" %}
       {% for data in y %}
-      <div class="flow-project {{ data.Topic }} {{ data.Goal_Primary }} {{ data.Year }}">
+      <div class="flow-project {{ data.Topic }} {{ data.Goal_Primary }} {{ data.Year }} {{ data.Method }}">
         <div class="project-body">
           <a class="project-title show-Modal">
             <figure class="image is-5by3">
@@ -214,12 +223,13 @@
     filterValue.push($('#topic').val());
     filterValue.push($('#goal').val());
     filterValue.push($('#year').val());
+    filterValue.push($('#method').val());
     console.log(filterValue);
 
     var row = $('.flow-project');
     row.each(function (i, el) {
       if (el.className.indexOf(filterValue[0]) > -1 && el.className.indexOf(filterValue[1]) > -1 && el.className
-        .indexOf(filterValue[2]) > -1) {
+        .indexOf(filterValue[2]) > -1 && el.className.indexOf(filterValue[3]) > -1) {
         $(el).show();
       } else {
         $(el).hide();
