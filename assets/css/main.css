@@ -307,27 +307,9 @@ li {
   } */
 
 .custom-text-button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    color: #AA7FF6;
-    cursor: pointer;
-    font-size: inherit;
-	text-decoration: none;
-	outline: none;
-	font-weight: bold;
-}
-
-.custom-text-button:hover,
-.custom-text-button:active,
-.custom-text-button:focus {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    color: #AA7FF6;
-    cursor: pointer;
-    font-size: inherit;
-	outline: none;
+	background-color: #AA7FF6;
+	color: white;
+	border: none;
 }
 
 .tag:not(body).is-info {

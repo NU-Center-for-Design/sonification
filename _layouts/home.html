@@ -30,7 +30,7 @@
     <a href=""><button class="button is-rounded is-info" id="backTotop"><i class="fas fa-arrow-up"></i></button></a>
     <div style="display: flex; align-items: center; gap: 0.5rem;">
       <div style="padding: 0rem 0.5rem;">
-        <button id="toggleFilter" class="button custom-text-button" >FILTER</button>
+        <button id="toggleFilter" class="button custom-text-button is-small is-info" >FILTER</button>
       </div>
       <div class="tags has-addons">
         <span class="tag is-dark">cases</span>
@@ -104,7 +104,7 @@
       <!-- display -->
        <div class="column">
         <div class="images flow project-list">
-          {% assign years = site.data.data-copy | group_by: "Year" %}
+          {% assign years = site.data.data_new | group_by: "Year" %}
           {% for yearsorted in years %}
           {% assign y = yearsorted.items | sort: "Author" %}
           {% for data in y %}
@@ -364,16 +364,16 @@ function applyFilters() {
     $('#counter').text(counts);
 }
 
-  // get tag values and search
-  $(".tag").click(function (value) {
-    // var value = $(this).val();
-    // console.log("click");
-    $("#mySearch").val($(this).text());
+  // // get tag values and search
+  // $(".tag").click(function (value) {
+  //   // var value = $(this).val();
+  //   // console.log("click");
+  //   $("#mySearch").val($(this).text());
 
-    var e = $.Event("click");
-    e.which = 37;
-    $("#applySearch").trigger(e);
-  })
+  //   var e = $.Event("click");
+  //   e.which = 37;
+  //   $("#applySearch").trigger(e);
+  // })
 
   // remove search input
   $("#searchDelete").click(function () {
