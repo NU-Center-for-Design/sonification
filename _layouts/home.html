@@ -65,7 +65,7 @@
       
           <p class="menu-label">Topic</p>
           <ul class="menu-list checkboxes">
-                  {% assign topics = site.data.data_new | map: "Topic" | uniq | sort %}
+                  {% assign topics = site.data.data_new | map: "Subtopic_1" | uniq | sort %}
                   {% for item in topics %}
                   <li>
                     <label class="checkbox">
