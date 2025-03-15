@@ -212,6 +212,50 @@ li {
 	/* z-index: 0; */
 }
 
+/* award banner--------------------*/
+
+.diagonal-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75px;
+    height: 75px;
+    background: #664f94; /* Light purple */
+    transform-origin: top right;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Pseudo-element for shadow */
+.diagonal-tag::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #9370DB; /* Light purple */
+    clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+    z-index: -1; /* Puts the shadow behind */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show shadow on hover */
+.figure-container:hover .diagonal-tag::after {
+    opacity: 1;
+}
+
+.text-rotate{
+	transform: rotate(45deg);
+	padding-bottom: 2.5vh;
+	font-weight: 700;
+	font-size: 0.9rem;
+}
+
 /* metadata--------------------*/
 
 .metadata {
@@ -219,6 +263,7 @@ li {
 }
 
 .attrs {
+	padding-top: 1vh;
 	display: flex;
 	flex-flow: row wrap;
 }
@@ -273,6 +318,106 @@ li {
 	margin-top: 0;
 }
 
+/*sidebar layout-----------------------------------------*/
+
+/* Base sidebar styles */
+.sidebar-container {
+	position: relative;
+  }
+  
+.sidebar {
+	padding: 1rem;
+	background: #161521;
+	width: 100%;
+	overflow-y: auto;
+	transition: all 0.3s ease;
+}
+  
+.sidebar.fixed {
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	overflow-y: auto;
+}
+
+.filter_bar{
+	display: flex; 
+	align-items: center; 
+	gap: 1rem;
+	padding: 0rem 0.5rem;
+}
+  
+/* Mobile toggle button */
+.mobile-toggle {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+}
+
+.menu-list {
+	max-width: fit-content;
+}
+  
+/* Mobile sidebar styles */
+@media screen and (max-width: 768px) {
+	
+	#toggleFilter_desktop {
+	  display: none;
+	}
+
+	#backTotop {
+		display: none;
+	  }
+
+	.sidebar-container {
+	  position: fixed;
+	  top: 0;
+	  left: -100%;
+	  height: 100vh;
+	  width: 85%;
+	  max-width: 300px;
+	  z-index: 1000;
+	  transition: left 0.3s ease;
+	  margin: 0;
+	}
+	
+	.sidebar-container.is-active {
+	  left: 0;
+	}
+	
+	.sidebar {
+	  height: 100%;
+	  border-radius: 0;
+	  padding-top: 1rem;
+	}
+	
+	.sidebar-header {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  margin-bottom: 1rem;
+	  padding-bottom: 0.5rem;
+	  border-bottom: 1px solid #2a2a3a;
+	}
+	
+	/* Overlay when sidebar is open */
+	.sidebar-overlay {
+	  display: none;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background: rgba(0, 0, 0, 0.7);
+	  z-index: 999;
+	}
+	
+	.sidebar-overlay.is-active {
+	  display: block;
+	}
+  }
+
 /*project layout-----------------------------------------*/
 
 .projects {
@@ -280,31 +425,6 @@ li {
 	position: relative;
 	margin-top: 20px;
 }
-
-.sidebar {
-    position: absolute;
-	padding: 0rem 0.5rem 2rem 0.5rem;
-    /* left: 0; */
-    /* top: 0; */
-    /* height: 100vh; */
-	overflow-y: auto;
-    width: max-content;
-    background: #161521; /* Dark overlay */
-    transition: width 0.3s ease-in-out;
-	/* z-index: 1000; */
-    /* overflow: hidden; */
-}
-
-.sidebar.fixed{
-	position: fixed;
-	overflow-y: auto;
-	height: 100vh;
-	top: 0;
-}
-
-/* .sidebar.open {
-    width: 200px;
-  } */
 
 .tag:not(body).is-info {
 	background-color: #AA7FF6;
@@ -375,7 +495,7 @@ li {
 }
 
 .modal-content figure {
-	margin: 2vh 0 3vh 0;
+	margin: 2vh 0 1vh 0;
 }
 
 .modal-content-footer {
@@ -650,10 +770,10 @@ li {
 }
 
 .logo {
-	height: 70px;
+	height: 100px;
 	width: auto;
 	padding-right: 70px;
-	background-color: white;
+	/* background-color: white; */
 }
 
 .logo-responsive {

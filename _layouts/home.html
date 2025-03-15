@@ -28,8 +28,8 @@
   <div class="container">
 
     <a href=""><button class="button is-rounded is-info" id="backTotop"><i class="fas fa-arrow-up"></i></button></a>
-    <div style="display: flex; align-items: center; gap: 0.5rem;">
-      <div style="padding: 0rem 0.5rem;">
+    <div class="filter_bar">
+      <div id="toggleFilter_desktop">
         <button id="toggleFilter" class="button custom-text-button is-small is-info" >FILTER</button>
       </div>
       <div class="tags has-addons">
@@ -37,12 +37,19 @@
         <span class="tag is-info" id="counter"></span>
       </div>
     </div>
-
     
     <div class="columns">
+
+      <!-- Mobile sidebar toggle button - always visible on small screens -->
+      <div class="mobile-toggle is-hidden-desktop">
+        <button id="sidebarToggle" class="button is-info">
+          <span class="icon"><i class="fas fa-filter"></i></span>
+          <span>Filters</span>
+        </button>
+      </div>
       
       <!-- Sidebar menu -->
-       <div class="column is-one-fifth is-hidden" id="filterMenu">
+       <div class="column is-one-fifth is-hidden sidebar-container" id="filterMenu">
         <aside class="menu sidebar">
           <p class="menu-label">Search</p>
           <ul class="menu-list">
@@ -62,10 +69,21 @@
               </div>
             </li>
           </ul>
-      
+          <p class="menu-label">Special collection</p>
+          <ul class="menu-list checkboxes">
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" class="filters-select special-item" value="Awards" /> Sonification award
+              </label>
+            </li>
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" class="filters-select special-item" value="Art_Blog" /> Sonification art blog
+              </label>
+            </li>
           <p class="menu-label">Topic</p>
           <ul class="menu-list checkboxes">
-                  {% assign topics = site.data.data_new | map: "Subtopic_1" | uniq | sort %}
+                  {% assign topics = site.data.dataWITHAWARDED | map: "Subtopic_1" | uniq | sort %}
                   {% for item in topics %}
                   <li>
                     <label class="checkbox">
@@ -76,7 +94,7 @@
           </ul>
           <p class="menu-label">Goal</p>
           <ul class="menu-list checkboxes">
-                  {% assign goals = site.data.data_new | map: "Goal_Primary" | uniq %}
+                  {% assign goals = site.data.dataWITHAWARDED | map: "Goal_Primary" | uniq %}
                   {% for item in goals %}
                   <li>
                     <label class="checkbox">
@@ -88,7 +106,7 @@
       
           <p class="menu-label">Method</p>
           <ul class="menu-list checkboxes">
-                  {% assign methods = site.data.data_new | map: "Method" | uniq %}
+                  {% assign methods = site.data.dataWITHAWARDED | map: "Method" | uniq %}
                   {% for item in methods %}
                   <li>
                     <label class="checkbox">
@@ -100,22 +118,35 @@
         </aside>
        </div>
   
-  
       <!-- display -->
        <div class="column">
         <div class="images flow project-list">
-          {% assign years = site.data.data_new | group_by: "Year" %}
+          {% assign years = site.data.dataWITHAWARDED | group_by: "Year" %}
           {% for yearsorted in years %}
           {% assign y = yearsorted.items | sort: "Author" %}
           {% for data in y %}
-          <div class="flow-project {{ data.Subtopic_1 }} {{ data.Goal_Primary }} {{ data.Year }} {{ data.Method }}">
+          <div class="flow-project {{ data.Subtopic_1 }} {{ data.Goal_Primary }} {{ data.Year }} {{ data.Method }} {{data.Awards}} {{data.Art_Blog}}">
             <div class="project-body">
               <a class="project-title show-Modal">
                 <figure class="image is-5by3">
-                  {% if data.Picture != nil %}
-                  <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
+                  {% if data.Picture != nil%}
+                  <div class="figure-container">
+                    <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
+                    <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                      {% if data.Awards %}
+                      <p class="text-rotate">Award</p>
+                      {% endif %}
+                    </div>
+                  </div>
                   {% else %}
-                  <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Picture_name }}.png">
+                  <div class="figure-container">
+                    <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Picture_name }}.png">
+                    <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                      {% if data.Awards %}
+                      <p class="text-rotate">Award</p>
+                      {% endif %}
+                    </div>
+                  </div>
                   {% endif %}
                 </figure>
                 <div>
@@ -141,14 +172,31 @@
                     </h2>
                   </div>
                   <figure class="image is-5by3">
-                    {% if data.Picture != nil %}
-                    <img class=" img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
+                    {% if data.Picture != nil%}
+                    <div>
+                      <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
+                      <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                        {% if data.Awards %}
+                        <p class=" text-rotate">Award</p>
+                        {% endif %}
+                      </div>
+                    </div>
                     {% else %}
-                    <img class="img-responsive center-block"
-                      src="{{ site.baseurl }}/assets/img/{{ data.Picture_name }}.png">
+                    <div>
+                      <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Picture_name }}.png">
+                      <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                        {% if data.Awards %}
+                        <p class=" text-rotate">Award</p>
+                        {% endif %}
+                      </div>
+                    </div>
                     {% endif %}
                   </figure>
+                  <p>{{ data.Description }}</p>
                   <div class="attrs">
+                    <!-- <div class="attr">
+                      <p>{{ data.Description }}</p>
+                    </div> -->
                     <div class="attr">
                       <h3>Topic</h3>
                       <p>{{ data.Topic }}</p>
@@ -165,12 +213,10 @@
                       <h3>Type of Sonification</h3>
                       <p>{{ data.Method }}</p>
                     </div>
-                    <div class="attr">
+                    <!-- <div class="attr">
                       <h3>Media Mix</h3>
                       <p>{{ data.Media_Mix }}</p>
-                    </div>
-                    <div class="attr">
-                    </div>
+                    </div> -->
                   </div>
                   <div class="modal-content-footer">
                     <i style="color:white" class="far fa-hand-point-right"></i>
@@ -196,260 +242,8 @@
   
     </div>
   </div>
-
-
 </div>
 
-<script>
-  $(function () {
-    //count current cases
-    var counts = $('.flow-project').length;
-    $('#counter').text(counts);
-  })
-
-  let old_url = window.location.pathname;
-
-  $(document).ready(function () {
-    $("a.show-Modal").on("click", function () {
-      // console.log("clicked");
-      $(this).next().removeClass("hide");
-      $(this).next().addClass("is-active");
-      // $(this).next().addClass("modal-fx-slideRight");
-      $("html").addClass("is-clipped");
-
-      let new_url = old_url + "#" + $(this).next().attr("id")
-      window.history.pushState({}, 0, new_url)
-
-    });
-  });
-
-  $(".modal-close").click(function () {
-    $(".modal").removeClass("is-active");
-    // $(".modal").removeClass("modal-fx-slideRight");
-    $("html").removeClass("is-clipped");
-
-    let new_url = old_url
-    window.history.pushState({}, 0, new_url)
-  });
-
-  $(".modal-background").click(function () {
-    $(".modal").removeClass("is-active");
-    // $(".modal").removeClass("modal-fx-slideRight");
-    $("html").removeClass("is-clipped");
-
-    let new_url = old_url
-    window.history.pushState({}, 0, new_url)
-  })
-
-  // filter function
-  $(".filters-select").change(function () {
-    // var filterValue = [];
-
-    // var topic = $('.topic-item:checked').map(function () {
-    //   return $(this).val();
-    // }).get();
-
-    // if (topic) filterValue.push(topic);
-
-    // console.log("active filters:", filterValue);
-
-    // if (filterValue[0].length === 0) {
-    //     $('.flow-project').show();
-    //     $('#counter').text($('.flow-project').length);
-    //     return;
-    // }
-
-    // $('.flow-project').each(function() {
-    //   var el = $(this);
-    //   var matches = filterValue[0].some(function(filter) {
-    //     return el.hasClass(filter);
-    //   });
-    //   if  (matches) {
-    //     el.show();
-    //   } else {
-    //     el.hide();
-    //   }
-    // });
-
-
-    // $("#mySearch").val("");
-    // $("#searchDelete").addClass("is-invisible");
-
-    // var counts = $('.flow-project:visible').length;
-    // console.log(counts);
-    // $('#counter').text(counts);
-    applyFilters();
-
-  })
-
-  // search function
-  $("#applySearch").click(function () {
-    // var search = $("#mySearch").val();
-    // var row = $('.flow-project');
-
-    // row.each(function (i, el) {
-    //   if ($(el).text().search(new RegExp(search, 'i')) < 0) {
-    //     $(el).hide();
-    //   } else {
-    //     $(el).show();
-    //   }
-    // });
-
-    $("#searchDelete").addClass("is-invisible");
-    // var counts = $('.flow-project:visible').length;
-    // // console.log(counts);
-    // $('#counter').text(counts);
-
-    applyFilters()
-  });
-
-  $("#mySearch").keyup(function () {
-    $("#searchDelete").removeClass("is-invisible");
-    var row = $('.flow-project');
-
-    if ($(this).val().length === 0) {
-      $("#searchDelete").addClass("is-invisible");
-      row.each(function (i, el) {
-        $(el).show();
-      })
-    };
-
-  // $(".filters-select").val($("option:first").val())
-
-
-  var input = document.getElementById("mySearch");
-
-  input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("applySearch").click();
-      }
-  });
-
-    // var counts = $('.flow-project:visible').length;
-    // // console.log(counts);
-    // $('#counter').text(counts);
-
-  })
-
-  // Combined filter and search function
-function applyFilters() {
-    var search = $("#mySearch").val().toLowerCase();
-    var filterValues = $('.topic-item:checked').map(function () {
-        return $(this).val();
-    }).get();
-
-    console.log("Active filters:", filterValues, "Search term:", search);
-
-    // Apply filters
-    $('.flow-project').each(function () {
-        var el = $(this);
-        var matchesFilter = filterValues.length === 0 || filterValues.some(function (filter) {
-            return el.hasClass(filter);
-        });
-
-        var matchesSearch = search === "" || el.text().toLowerCase().includes(search);
-
-        // Show element only if it matches both the filter and the search
-        if (matchesFilter && matchesSearch) {
-            el.show();
-        } else {
-            el.hide();
-        }
-    });
-
-    // Update the counter
-    var counts = $('.flow-project:visible').length;
-    console.log("Visible items:", counts);
-    $('#counter').text(counts);
-}
-
-  // // get tag values and search
-  // $(".tag").click(function (value) {
-  //   // var value = $(this).val();
-  //   // console.log("click");
-  //   $("#mySearch").val($(this).text());
-
-  //   var e = $.Event("click");
-  //   e.which = 37;
-  //   $("#applySearch").trigger(e);
-  // })
-
-  // remove search input
-  $("#searchDelete").click(function () {
-    $("#mySearch").val("");
-    var e = $.Event("click");
-    e.which = 65;
-    $("#applySearch").trigger(e);
-  })
-
-  // back to top button
-  var btn = $('#backTotop');
-
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 300) {
-      btn.addClass('show');
-    } else {
-      btn.removeClass('show');
-    }
-  });
-
-  btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-      scrollTop: 0
-    }, '300');
-  });
-
-  // open modal with individual url
-  $(document).ready(function () {
-    var href = $(location).attr('href');
-    var array = href.split('/');
-    var lastsegment = array[array.length - 1];
-
-    if (window.location.href.indexOf(lastsegment) != -1) {
-      $(lastsegment).removeClass("hide");
-      $(lastsegment).addClass("is-active");
-      // $("html").addClass("is-clipped");
-    }
-
-
-  });
-
-  // toggle filter menu
-  $("#toggleFilter").click(function () {
-    $("#filterMenu").toggleClass("is-hidden");
-    // add toggle transition effect
-  })
-
-  // toggle fixed sidebar on scroll
-  document.addEventListener("DOMContentLoaded", function () {
-  const sidebar = document.querySelector(".sidebar");
-  const introSection = document.querySelector(".intro");
-  const introHeight = introSection.scrollHeight + 230;
-//   const introHeight = Array.from(introSection.children).reduce((total, child) => {
-//     return total + child.offsetHeight;
-// }, 0);
-  
-  // const offset = 100;
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > introHeight) {
-      console.log(introHeight);
-      sidebar.classList.add("fixed");
-    } else {
-      sidebar.classList.remove("fixed");
-    }
-
-    // const introTop = introSection.getBoundingClientRect().top;
-    // if (introTop <= 0) {
-    //   sidebar.classList.add("fixed");
-    // } else {
-    //   sidebar.classList.remove("fixed");
-    // }
-
-  });
-});
-</script>
+<script src="{{ site.baseurl }}/assets/js/main.js"></script>
 
 {% include footer.html %}
