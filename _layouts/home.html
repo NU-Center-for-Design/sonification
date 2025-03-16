@@ -71,11 +71,11 @@
           </ul>
           <p class="menu-label">Special collection</p>
           <ul class="menu-list checkboxes">
-            <li>
+            <!-- <li>
               <label class="checkbox">
                 <input type="checkbox" class="filters-select special-item" value="Awards" /> Sonification award
               </label>
-            </li>
+            </li> -->
             <li>
               <label class="checkbox">
                 <input type="checkbox" class="filters-select special-item" value="Art_Blog" /> Sonification art blog
@@ -132,20 +132,20 @@
                   {% if data.Picture != nil%}
                   <div class="figure-container">
                     <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
-                    <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                    <!-- <div class="{% if data.Awards %} diagonal-tag{% endif %}">
                       {% if data.Awards %}
                       <p class="text-rotate">Award</p>
                       {% endif %}
-                    </div>
+                    </div> -->
                   </div>
                   {% else %}
                   <div class="figure-container">
                     <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Picture_name }}.png">
-                    <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                    <!-- <div class="{% if data.Awards %} diagonal-tag{% endif %}">
                       {% if data.Awards %}
                       <p class="text-rotate">Award</p>
                       {% endif %}
-                    </div>
+                    </div> -->
                   </div>
                   {% endif %}
                 </figure>
@@ -175,20 +175,20 @@
                     {% if data.Picture != nil%}
                     <div>
                       <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/default.jpg">
-                      <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                      <!-- <div class="{% if data.Awards %} diagonal-tag{% endif %}">
                         {% if data.Awards %}
                         <p class=" text-rotate">Award</p>
                         {% endif %}
-                      </div>
+                      </div> -->
                     </div>
                     {% else %}
                     <div>
                       <img class="img-responsive center-block" src="{{ site.baseurl }}/assets/img/{{ data.Picture_name }}.png">
-                      <div class="{% if data.Awards %} diagonal-tag{% endif %}">
+                      <!-- <div class="{% if data.Awards %} diagonal-tag{% endif %}">
                         {% if data.Awards %}
                         <p class=" text-rotate">Award</p>
                         {% endif %}
-                      </div>
+                      </div> -->
                     </div>
                     {% endif %}
                   </figure>
