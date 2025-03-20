@@ -430,7 +430,12 @@ li {
 	background-color: #AA7FF6;
 }
 
-.button.is-info,
+.button.is-info {
+	background-color: #664f94;
+	color: #ffffff;
+	transition: all 0.1s ease-in-out;
+}
+
 .button.is-info:hover {
 	background-color: #AA7FF6;
 	color: #ffffff;
