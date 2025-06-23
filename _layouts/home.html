@@ -83,7 +83,7 @@
             </li>
           <p class="menu-label">Topic</p>
           <ul class="menu-list checkboxes">
-                  {% assign topics = site.data.dataWITHAWARDED | map: "Subtopic_1" | uniq | sort %}
+                  {% assign topics = site.data.dataWITHAWARDED_new | map: "Subtopic_1" | uniq | sort %}
                   {% for item in topics %}
                   <li>
                     <label class="checkbox">
@@ -94,7 +94,7 @@
           </ul>
           <p class="menu-label">Goal</p>
           <ul class="menu-list checkboxes">
-                  {% assign goals = site.data.dataWITHAWARDED | map: "Goal_Primary" | uniq %}
+                  {% assign goals = site.data.dataWITHAWARDED_new | map: "Goal_Primary" | uniq %}
                   {% for item in goals %}
                   <li>
                     <label class="checkbox">
@@ -106,7 +106,7 @@
       
           <p class="menu-label">Method</p>
           <ul class="menu-list checkboxes">
-                  {% assign methods = site.data.dataWITHAWARDED | map: "Method" | uniq %}
+                  {% assign methods = site.data.dataWITHAWARDED_new | map: "Method" | uniq %}
                   {% for item in methods %}
                   <li>
                     <label class="checkbox">
@@ -121,7 +121,7 @@
       <!-- display -->
        <div class="column">
         <div class="images flow project-list">
-          {% assign years = site.data.dataWITHAWARDED | group_by: "Year" %}
+          {% assign years = site.data.dataWITHAWARDED_new | group_by: "Year" %}
           {% for yearsorted in years %}
           {% assign y = yearsorted.items | sort: "Author" %}
           {% for data in y %}
